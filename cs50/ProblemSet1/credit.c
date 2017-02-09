@@ -35,7 +35,7 @@ int checkSumm(long long number,int lenght){
     int sum_nechet=0;
     //char *simvol_number;
     //simvol_number=(char*)malloc((lenght+1)*sizeof(char));
-    char simvol_number[lenght];
+    char simvol_number[lenght+1];
     sprintf(simvol_number, "%llu", number);
     for(int count=0,i=0;count<lenght;count++){
         i=lenght-count-1;
