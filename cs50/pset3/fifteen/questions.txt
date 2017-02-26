@@ -1,0 +1,4 @@
+0. min size of board is 3x3 and max is 9x9
+1. int array
+2. void greet(void)
+3. void init(void), void draw(void), bool move(int tile), bool won(void)
