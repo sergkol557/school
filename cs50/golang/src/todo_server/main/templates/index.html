@@ -1,0 +1,189 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>test server</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="templates/style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+	<script type="text/javascript">
+		function SignShow(){
+
+			$("#post").hide();
+			$("#reg").hide();
+    		$("#sign").show();
+		}
+		function PostShow(){
+
+			$("#sign").hide();	
+			$("#reg").hide();
+    		$("#post").show();
+		}
+		function PostHide(){
+
+    		$("#post").hide();
+		}
+		function SignHide(){
+
+    		$("#sign").hide();
+		}
+
+		function RegisterShow(){
+
+			$("#post").hide();
+			$("#sign").hide();
+    		$("#reg").show();
+		}
+		function RegisterHide(){
+
+    		$("#reg").hide();
+		}
+		function SignSend(){
+
+    		var login = $("#login").val();
+    		var pas = $("#pas").val();
+
+    		$("#sign").hide();
+    		$.get("", {login,pas,act:"sign"}, 
+    			function(data,status){
+            		$("#hello").html(data);
+            		if(data.indexOf('Hello')>=0){ 
+
+            			$("#add").removeAttr("disabled");	
+            	   		$("#update").removeAttr("disabled");
+            	   		$("textarea#text").val("");
+
+            	   		document.cookie = "login="+login;
+            	   		document.cookie = "pas="+pas;
+    					
+            	   		UpdatePost();            	   		  
+
+            	   	}else{
+
+            	   		$("#add").attr("disabled", true);
+            	   		$("#update").attr("disabled", true);
+            	   	}                      	     	
+        		});
+		}
+
+		$(window).resize(function() {
+			
+  			$("article").css("height",$(window).height()*0.75);
+		});
+
+		function RegisterSend(){
+    		
+    		var action = "reg";
+    		var login = $("#reglogin").val();
+    		var pas = $("#regpas").val();
+
+    		$("#reg").hide();
+    		$.get("", {login,pas,act:"reg"}, function(data,status){
+
+				alert(data);           	     	
+        	});
+    	}
+    	function UpdatePost(){
+
+    		$.get("",{act:"update"},function(data,status){
+
+    				$("article").css("height",$(window).height()*0.7);
+    			   	$("article").html(data);
+    		});
+    	}
+    	function AddPost(){
+
+    		PostHide();
+    		var date = Date();
+    		var text = $("textarea#text").val();
+    		$("textarea#text").val("");
+    		$.get("",{act:"add",date,text},function(data,status){
+    			alert(data);
+    			UpdatePost();
+    		}); 			
+    	}
+    	function LogOut(){
+
+    		document.cookie = 'login=; Max-Age=0';
+            document.cookie = 'pas=; Max-Age=0';
+    		$("article").html("");
+    		$("#add").attr("disabled", true);
+            $("#update").attr("disabled", true);
+    		$.get("",{act:"logout"},function(data,status){
+    			$("#hello").html(data);	    			
+    		}); 			
+    	}
+	</script>
+</head>
+<body onload="$('article').css('height',$(window).height()*0.7);">
+<header>
+	<h1 id="hello">
+		Please <a href="javascript:SignShow()">sign</a> or <a href="javascript:RegisterShow()">register</a>
+	</h1>
+</header>
+<div id="buttons">
+	<button id="update" disabled="true" onclick="UpdatePost()">update</button>
+	<button id="add" disabled="true" onclick="PostShow()">add new</button>
+</div>
+
+<article>
+</article>
+
+<!-- Signing form -->
+<div id="sign" class="b-popup" hidden="true">
+ 	<div>
+    	<div>
+    	 	<fieldset>
+    	 		<legend>sign form</legend>    		 
+		 		<label>login</label>	 		 
+		 		<input type='text' id="login" placeholder='Please input your login' required>
+		 		<br>
+		 		<label>password</label>
+	     		<input type='password' id="pas" placeholder='Please input your password' required>
+	    		<br>		    
+	     		<button onclick="SignSend()">sign</button>			
+		 		<a href="javascript:SignHide()">Close form</a>
+	       	</fieldset>              	
+    	</div>
+	</div>
+</div>
+<!-- Registration form -->
+<div id="reg" class="b-popup" hidden="true">
+ 	<div>
+    	<div>
+    	 	<fieldset>
+    			<legend>register form</legend>    		
+				<label>login</label>
+		 		<input type='text' id="reglogin" placeholder='Please input your login' required>
+				<br>
+		 		<label>password</label>
+	     		<input type='password' id="regpas" placeholder='Please input your password' required>
+	    		<br>
+	     		<button onclick="RegisterSend()">register</button>			
+				<a href="javascript:RegisterHide()">Close form</a>
+	       	</fieldset>              	
+    	</div>
+	</div>
+</div>
+<!-- add Post Form -->
+<div id="post" class="b-popup" hidden="true">
+ 	<div>
+    	<div>
+    		<fieldset>
+      			<legend>add Job</legend>    		
+	 			<textarea placeholder="Please input your text" id="text" rows="10" cols="40"></textarea>
+	 			<br>
+		     	<button onclick="AddPost()">Add</button>			
+				<a href="javascript:PostHide()">Close form</a>
+	        </fieldset>              	
+    	</div>
+	</div>
+</div>
+<footer>
+<p>
+	Todo server example
+</p>
+</footer>
+</body>
+</html>
+

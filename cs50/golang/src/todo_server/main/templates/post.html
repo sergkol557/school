@@ -1,0 +1,12 @@
+<div id="content">	
+	<p id="posttext"><h3>%s</h3></p>
+	<p id="postdate">%s</p>
+	<button id="del" onclick="
+			var date = $(this).parent().find('#postdate').text();
+    		$(this).parent().hide();
+    		$.get('',{act:'delete',date}, function(data,status){
+    			alert(data);
+    		});">
+    delete</button>
+	<button id="add" onclick="PostShow()">add new</button>
+</div>

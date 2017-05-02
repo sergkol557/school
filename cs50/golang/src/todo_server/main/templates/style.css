@@ -1,0 +1,132 @@
+
+html,body{
+  margin:0;
+  padding:0;
+  word-wrap: break-word;
+  min-height: 240;
+  min-width: 480;
+  font: 80% arial,sans-serif;
+  overflow: hidden;
+}
+
+header h1{
+  height:80px;
+  line-height:80px;
+  margin:0;
+  border: 4px solid rgba(102 ,153 ,255, 0.7);
+  background:rgb(102 ,153 ,255);color: white;text-align: center;
+}
+
+header a{
+  color: white;
+}
+
+footer{
+  text-align: center;
+}
+
+footer p{
+  margin:0;
+  padding:5px 10px;
+}
+
+footer a{
+  display:inline;
+  padding:0;
+  color: #C6D5FD;
+}
+
+footer{
+  position: fixed; 
+  left: 0; bottom: 0; 
+  padding: 10px; 
+  background:rgba(51, 51, 51, 0.6);
+  color: #fff; 
+  width: 100%; 
+}
+
+a{
+  padding:10px;
+  text-decoration: none;
+}
+
+article p{
+  line-height:1.4;
+}
+
+article{
+  margin: 0 25% 13% 25%;
+  float: left;
+  height: 70%;
+  width: 70%;
+  overflow: auto;
+}
+
+div#buttons{
+  margin: 5px 0 5px 45%;
+  padding: 3px;
+  float: left; 
+  border: 1px solid #c5c5c5;
+  border-radius: 5px;   
+}
+
+p#head{
+  text-align: center;
+}
+
+p#text{
+  text-align: justify;
+}
+
+p#data{
+  color: gray;
+}
+
+div#content{
+  margin-bottom: 10px;
+}
+
+aside{
+  background: rgba(0, 170, 238, 0.6);
+  float:left;
+  width:180px
+  ;min-width: 165px;
+}
+
+fieldset {
+  font-family: sans-serif;
+  border: 1px solid #D4DADB;
+  padding: 0 15px;
+  border-radius: 3px; 
+}
+
+label {
+  width: 80px;
+  font-size: 14px;
+  display: inline-block;
+}
+
+fieldset input {
+  border: 1px solid #C1C1C1;
+  padding: 3px 5px;
+  margin: 7px;
+  font-weight: bolder;
+  width: 250px;
+}
+
+.b-popup{
+    overflow:hidden;
+    position:absolute;
+    left:33%;
+    top:30%;
+    margin:10px auto 0px auto;
+    padding:10px;
+    border: 1px solid #c5c5c5;
+    background-color: #c5c5c5;
+    border-radius:5px;
+    box-shadow: 0px 0px 10px #000;
+}
+
+textarea{
+  margin: auto;
+}
