@@ -1,0 +1,47 @@
+{
+	"comment": "",
+	"ignore": "test",
+	"package": [
+		{
+			"checksumSHA1": "J+kVue/HTH4sELlqMO4z0tx9DiA=",
+			"path": "github.com/boltdb/bolt",
+			"revision": "e9cf4fae01b5a8ff89d0ec6b32f0d9c9f79aefdd",
+			"revisionTime": "2017-01-31T19:20:18Z"
+		},
+		{
+			"checksumSHA1": "g/V4qrXjUGG9B+e3hB+4NAYJ5Gs=",
+			"path": "github.com/gorilla/context",
+			"revision": "08b5f424b9271eedf6f9f0ce86cb9396ed337a42",
+			"revisionTime": "2016-08-17T18:46:32Z"
+		},
+		{
+			"checksumSHA1": "zmCk+lgIeiOf0Ng9aFP9aFy8ksE=",
+			"path": "github.com/gorilla/mux",
+			"revision": "4c1c3952b7d9d0a061a3fa7b36fd373ba0398ebc",
+			"revisionTime": "2017-04-27T04:12:50Z"
+		},
+		{
+			"checksumSHA1": "IUMUo+tWf3rxKAj6jIQ54k/U5Ck=",
+			"path": "github.com/heroku/simpletodoserver/todo_server",
+			"revision": "01eb683f1f40d7cf41274f9c8cb3b828a58405e1",
+			"revisionTime": "2017-05-04T04:18:22Z"
+		},
+		{
+			"checksumSHA1": "OBvAHqWjdI4NQVAqTkcQAdTuCFY=",
+			"path": "github.com/justinas/alice",
+			"revision": "1051eaf52fcafdd87ead59d28b065f1fcb8274ec",
+			"revisionTime": "2016-09-10T10:38:22Z"
+		},
+		{
+			"checksumSHA1": "oS0UZOGWVVsVciOQ8nZJ582mFF8=",
+			"path": "golang.org/x/sys/unix",
+			"revision": "9ccfe848b9db8435a24c424abbc07a921adf1df5",
+			"revisionTime": "2017-04-27T03:54:25Z"
+		},
+		{
+			"path": "todo_server",
+			"revision": ""
+		}
+	],
+	"rootPath": "github.com/heroku/simpletodoserver"
+}
